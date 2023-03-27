@@ -2,6 +2,12 @@ import discord
 import responses
 import os
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
+TOKEN = os.getenv("TOKEN")
+
 # Send messages
 async def send_message(message, user_message, is_private):
     try:
@@ -45,4 +51,4 @@ def run_discord_bot():
             await send_message(message, user_message, is_private=False)
 
     # Remember to run your bot with your personal TOKEN
-    client.run('MTA4ODEyNTU1MDExMzA2NzAwOQ.GcsPbJ.Ce1ymzG42zEnj9J-MgDI-5yJbI-HkZq3qDsSOY')
+    client.run(TOKEN)
